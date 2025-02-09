@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Love You Adhrita</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #ff0000, #000000);
+            text-align: center;
+            color: #fff;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: background 0.5s ease-in-out;
+        }
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 3.5em;
+            color: turquoise;
+            z-index: 2;
+        }
+        p {
+            font-size: 1.2em;
+            color: #fff;
+            max-width: 600px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            z-index: 2;
+        }
+        @keyframes hearts {
+            0% {
+                transform: translateY(100vh) scale(0.5);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) scale(1.2);
+                opacity: 0;
+            }
+        }
+        .heart {
+            position: absolute;
+            bottom: -10px;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            clip-path: polygon(50% 0%, 100% 35%, 80% 100%, 50% 75%, 20% 100%, 0% 35%);
+            animation: hearts 4s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <h1>I Love You Adhrita</h1>
+    <p>Adhrita, tum meri life ki woh roshni ho jo andheron ko bhi khatam kar deti hai. Tumhari hasi meri duniya ko roshan karti hai. Har din tumhare saath ek naya sapna jaisa lagta hai. Main hamesha tumhare saath rahna chahta hoon, har khushi, har gam mein. Tum meri duniya ho, Adhrita. - Bhavya ❤️</p>
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+            document.body.appendChild(heart);
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
